@@ -1,0 +1,7 @@
+<%= form_for @task do |f| %>
+  <%= f.label "Task" %>:
+  <%= f.hidden_field :list_id, value: @list.id %>
+  <%= f.text_field :description %><br />
+
+  <%= f.submit %>
+<% end %>

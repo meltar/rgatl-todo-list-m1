@@ -2,5 +2,9 @@
 <%= link_to "Add Task", new_task_path(list_id: @list.id) %></h2>
 
 <%- @list.tasks.each do |task| %>
-  <li><%= task.description %>
+  <%- if task.completed? %>
+    <li><del><%= link_to task.description, edit_task_path(task) %></del>
+  <%- else %>
+    <li><%= link_to task.description, edit_task_path(task) %>
+  <%- end %>
 <% end %>
