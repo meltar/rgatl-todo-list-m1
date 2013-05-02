@@ -20,4 +20,8 @@ class List < ActiveRecord::Base
   def incomplete_tasks
     tasks.where(completed: false)
   end
+
+  def completed_tasks
+    tasks.where(completed: true)
+  end
 end
