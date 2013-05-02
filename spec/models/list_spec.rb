@@ -18,10 +18,10 @@ describe List do
     ironing_task = Task.create(description: "Iron cape")
     save_world_task = Task.create(description: "Save the world")
 
-    list.tasks << grocery_store_task
-    list.tasks << laundry_task
-    list.tasks << ironing_task
-    list.tasks << save_world_task
+    list.add_task(grocery_store_task)
+    list.add_task(laundry_task)
+    list.add_task(ironing_task)
+    list.add_task(save_world_task)
 
     list.tasks.should == [grocery_store_task, laundry_task, ironing_task, save_world_task]
   end

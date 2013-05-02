@@ -13,4 +13,7 @@ class List < ActiveRecord::Base
   # http://guides.rubyonrails.org/association_basics.html#the-has_many-association
   has_many :tasks
 
+  def add_task(task)
+    tasks.push(task)
+  end
 end
