@@ -10,4 +10,9 @@ describe Task do
     task = Task.new
     task.valid?.should == false
   end
+
+  it 'is by default marked as incomplete' do
+    task = Task.new(description: "New Test Task")
+    task.completed?.should == false
+  end
 end
