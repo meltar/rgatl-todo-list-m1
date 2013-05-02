@@ -10,6 +10,10 @@ gem 'pg'
 group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
+end
+
+group :test do
+  gem 'database_cleaner'
   gem 'simplecov'
 end
 
