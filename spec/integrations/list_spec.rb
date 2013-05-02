@@ -48,4 +48,17 @@ describe 'list' do
     page.should have_content save_world_task.description
   end
 
+  it 'can add tasks from the show list page' do
+    list = List.create(name: "List Name")    
+
+    visit root_path
+    click_link list.name
+    click_link "Add Task"
+    fill_in "task_description", with: "Get excited and make things"
+    click_button "Create Task"
+
+    page.should have_content "List Name"
+    page.should have_content "Get excited and make things"
+  end
+
 end
