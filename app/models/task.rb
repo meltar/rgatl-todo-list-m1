@@ -1,5 +1,5 @@
 class Task < ActiveRecord::Base
-  attr_accessible :description
+  attr_accessible :description, :completed
   validates :description, :presence => true
 
   # The belongs_to association is described here: 
@@ -9,5 +9,9 @@ class Task < ActiveRecord::Base
 
   def completed?
     completed
+  end
+
+  def mark_complete
+    self.update_attributes(completed: true)
   end
 end

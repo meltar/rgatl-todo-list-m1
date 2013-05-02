@@ -15,4 +15,10 @@ describe Task do
     task = Task.new(description: "New Test Task")
     task.completed?.should == false
   end
+
+  it 'can be marked complete' do
+    task = Task.new(description: "Test Task")
+    task.mark_complete
+    task.completed?.should == true
+  end
 end
