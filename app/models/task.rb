@@ -7,10 +7,6 @@ class Task < ActiveRecord::Base
   # It requires us to add the field 'list_id' to the tasks table.
   belongs_to :list
 
-  def completed?
-    completed
-  end
-
   def mark_complete
     self.update_attributes(completed: true)
   end
