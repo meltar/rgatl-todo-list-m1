@@ -16,4 +16,8 @@ class List < ActiveRecord::Base
   def add_task(task)
     tasks.push(task)
   end
+
+  def incomplete_tasks
+    tasks.where(completed: false)
+  end
 end
