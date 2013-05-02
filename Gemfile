@@ -10,6 +10,7 @@ gem 'pg'
 group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
+  gem 'simplecov'
 end
 
 # Gems used only for assets and not required
