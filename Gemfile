@@ -9,12 +9,13 @@ gem 'pg'
 
 group :development, :test do
   gem 'rspec-rails'
-  gem 'capybara'
 end
 
 group :test do
   gem 'database_cleaner'
   gem 'simplecov'
+  gem 'capybara'
+  gem 'capybara-webkit'
 end
 
 # Gems used only for assets and not required
