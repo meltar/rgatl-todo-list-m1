@@ -1,5 +1,8 @@
 RgatlTodoList::Application.routes.draw do
 
+  # These lines give us ALL of the standard routes for lists and tasks
+  # The handling of these routes is done in the controllers.
+  # http://guides.rubyonrails.org/routing.html#resources-on-the-web
   resources :lists
   resources :tasks
 
