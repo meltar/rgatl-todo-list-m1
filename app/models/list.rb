@@ -7,5 +7,10 @@ class List < ActiveRecord::Base
   # This will prevent a List object from being created if it does not have a name
   # http://guides.rubyonrails.org/active_record_validations_callbacks.html#validations-overview
   validates :name, :presence => true
-  
+
+  # The has_many association is usually paired with a belongs_to association. It does not require a 
+  # new attribute to be added to the lists table
+  # http://guides.rubyonrails.org/association_basics.html#the-has_many-association
+  has_many :tasks
+
 end
