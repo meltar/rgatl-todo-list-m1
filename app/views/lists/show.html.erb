@@ -1,5 +1,5 @@
-<h4><%= @list.name %></h4>
-<%= link_to "Add Task", new_task_path(list_id: @list.id) %>
+<h2><%= @list.name %>
+<%= link_to "Add Task", new_task_path(list_id: @list.id) %></h2>
 
 <%- @list.tasks.each do |task| %>
   <li><%= task.description %>
