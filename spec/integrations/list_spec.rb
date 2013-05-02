@@ -29,4 +29,23 @@ describe 'list' do
     page.should have_content list.name
   end
 
+  it 'shows its tasks on the show list page' do
+    list = List.create(name: "List Name")    
+    grocery_store_task = Task.create(description: "Buy groceries")
+    laundry_task = Task.create(description: "Do laundry")
+    ironing_task = Task.create(description: "Iron cape")
+    save_world_task = Task.create(description: "Save the world")
+    list.add_task(grocery_store_task)
+    list.add_task(laundry_task)
+    list.add_task(ironing_task)
+    list.add_task(save_world_task)
+
+    visit root_path
+    click_link list.name
+    page.should have_content grocery_store_task.description
+    page.should have_content laundry_task.description
+    page.should have_content ironing_task.description
+    page.should have_content save_world_task.description
+  end
+
 end
