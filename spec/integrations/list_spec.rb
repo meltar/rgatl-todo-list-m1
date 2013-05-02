@@ -62,4 +62,25 @@ describe 'list' do
     page.should have_css("del", text: excited_task.description)
   end
 
+  it 'displays how many tasks completed out the the total number of tasks on the list' do
+    list = List.create(name: "Good List")    
+    excited_task = Task.create(description: "Get excited")
+    make_task = Task.create(description: "Make things")    
+    list.add_task(excited_task)
+    list.add_task(make_task)    
+    excited_task.mark_complete
+
+    list = List.create(name: "Bad List")    
+    grumpy_task = Task.create(description: "Be grumpy")
+    throw_task = Task.create(description: "Throw things")
+    lose_friends_task = Task.create(description: "Lose friends") 
+    list.add_task(grumpy_task)
+    list.add_task(throw_task)
+    list.add_task(lose_friends_task)
+
+    visit root_path
+    page.should have_content "Good List (1/2 tasks completed)"
+    page.should have_content "Bad List (0/3 tasks completed)" 
+  end
+
 end
