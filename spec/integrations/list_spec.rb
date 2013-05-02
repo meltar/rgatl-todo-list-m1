@@ -12,7 +12,9 @@ describe 'list' do
   it 'can be created via the new list page' do
     visit root_path
     click_link "New List"
-    
+
+    # to find the element name, in Chrome, you can right click on the field
+    # and select "Inspect Element" where you'll see the rendered HTML
     fill_in "list_name", with: "Test List Name"
     click_button "Create List"
 
