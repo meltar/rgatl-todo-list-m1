@@ -21,4 +21,12 @@ describe 'list' do
     page.should have_content "Test List Name"
   end
 
+  it 'can be viewed by itself via the show list page' do
+    list = List.create(name: "List Name")
+
+    visit root_path
+    click_link list.name
+    page.should have_content list.name
+  end
+
 end
