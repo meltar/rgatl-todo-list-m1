@@ -1,21 +1,26 @@
-rgatl-todo-list
-===============
+rgatl-todo-list Milestone 1
+============================
 
 This application is a basic to-do list!
 
 To get this app up and running, run these commands in console:
 
+```bash
 bundle install
-
-^this command installs all of the necessary gems listed in the Gemfile
-
+```
+```bash 
 rake db:create:all
-
-^this command creates the test and development databases based on the configuration found in config/database.yml
-
+```
+```bash 
 rake db:migrate
+```
 
-^this command adds all of the tables and table attributes to the database defined in the migration files in db/migrate
+These commands do the following:
+  1. Install all of the necessary gems listed in the Gemfile
+  2. Create the test and development databases based on the configuration specified in config/database.yml 
+  3. Add all of the tables and table attributes to the database defined in the migration files in db/migrate
 
 Then, to run the tests, run this command in console:
+```bash
 rspec spec
+```
